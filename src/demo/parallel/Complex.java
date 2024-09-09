@@ -97,10 +97,18 @@ public class Complex {
     public Complex divide(Complex other) {
         double real = (re * other.re + im * other.im) / (other.re * other.re + other.im * other.im);
         double imag = (im * other.re - re * other.im) / (other.re * other.re + other.im * other.im);
-        return new Complex(real, imag);
+        return new Complex(real, -imag);
     }
 
     public Complex subtract(Complex other) {
         return new Complex(re - other.re, im - other.im);
+    }
+
+    public double getRe() {
+        return this.re;
+    }
+
+    public double getIm() {
+        return this.im;
     }
 }
